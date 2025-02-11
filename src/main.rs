@@ -8,6 +8,7 @@ use image::write_header;
 
 mod color;
 mod image;
+mod ray;
 mod vec3;
 
 fn main() -> io::Result<()> {

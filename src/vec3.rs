@@ -95,6 +95,14 @@ impl ops::Mul<f64> for Vec3 {
     }
 }
 
+impl ops::Mul<Vec3> for f64 {
+    type Output = Vec3;
+
+    fn mul(self, rhs: Vec3) -> Self::Output {
+        rhs * self
+    }
+}
+
 impl ops::MulAssign<f64> for Vec3 {
     fn mul_assign(&mut self, rhs: f64) {
         self.data.each_mut().map(|x| *x *= rhs);
@@ -114,3 +122,5 @@ impl ops::DivAssign<f64> for Vec3 {
         self.data.each_mut().map(|x| *x /= rhs);
     }
 }
+
+pub type Point3 = Vec3;
